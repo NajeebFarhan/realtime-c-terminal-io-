@@ -14,20 +14,22 @@ int main()
 
     while (key != 'q')
     {
+        //! Your own code here, inside the while loop
         for (int i = 0; i < 20; i++)
         {
+
+            printf("LooP\n");
             usleep(100000); // Sleep for 100ms to control the loop speed
 
-            if (kbhit())
+            if (key_pressed())
             { // Check if a key is pressed
                 key = getchar();
-                printf("%c   \n", key);
+                printf("Key pressed: %c\n", key);
             }
-            else
-                printf("loop\n");
         }
+
         // Move cursor back to top
-        printf("\e[%iA", 20);
+        printf("\e[%iA", 20); // Enter the height in argument to move to top
     }
 
     // Show cursor
